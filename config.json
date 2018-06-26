@@ -1,5 +1,9 @@
 {   "DEVELOP":{
         "SQLALCHEMY_DATABASE_URI":"postgresql://patrick:erasmusmundus@localhost/deloitte",
         "DEBUG":"True"
+    },
+    "PROD":{
+        "SQLALCHEMY_DATABASE_URI":"postgres://pculbeyiknnvmk:bfc295bf29c6d388f801f61eb364a87bd1c9413fe8044dd3a1a522c5e5c5c61b@ec2-79-125-12-27.eu-west-1.compute.amazonaws.com:5432/dfcbjetebamtnt",
+        "DEBUG":"False"
     }
 }

@@ -4,13 +4,14 @@ from flask_sqlalchemy import SQLAlchemy
 from settings import setupConfig
 
 app = Flask(__name__)
-config = setupConfig(develop=True)
+config = setupConfig(prod=True)
 app.secret_key = 'Very secret key'
 app.config.update(config)
 
 db  = SQLAlchemy()
 db.init_app(app)
 
+# User model for postgres
 class User(db.Model):
     __tablename__ = 'users'
 
@@ -50,7 +51,7 @@ def removeuser():
     db.session.commit()
     return redirect('/')
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect('/')
