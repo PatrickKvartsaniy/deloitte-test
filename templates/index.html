@@ -1,8 +1,8 @@
 {% extends 'core.html' %}
 
 {% block content %}
-    <h3>Hello {{ctx.name}}</h3>
     <div class="container">
+        <h3>Hello {{ctx.name}}<a href="/logout"><button type="submit" class="btn btn-primary mb-2" style="margin-left: 50px">Logout</button></a></h3>
         <form class="form-inline" action="/adduser" method="POST">
             <div class="form-group mb-2">
               <input type="text" class="form-control" name="Username" id="Username" placeholder="Username" required="">
@@ -21,4 +21,7 @@
         <button type="submit" class="btn btn-danger mb-2">Delete user</button>
       </form>
     </div>
+    {% if ctx.result %}
+      <h3 style=" text-align: center">{{ctx.result}}</h3>
+    {% endif %}
 {%endblock%}
