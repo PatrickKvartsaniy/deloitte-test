@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from tools import setupConfig, login_required
 
 app = Flask(__name__)
-config = setupConfig(develop=True)
+config = setupConfig(prod=True)
 app.secret_key = 'Very secret key'
 app.config.update(config)
 
